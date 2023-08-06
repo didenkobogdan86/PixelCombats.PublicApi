@@ -69,3 +69,16 @@ Build.GetContext().BlocksSet.Value = BuildBlocksSet.AllClear;
 
 // ������������ �����
 Spawns.GetContext().RespawnTime.Value = 0;
+Players.Get("175381CC48705938").build.BuildRangeEnable.Value = true;  
+Players.Get("175381CC48705938"). Damage.DamageIn.Value = false;  
+// ????????? ???? ? ??????? ?? ???????    
+Teams.OnRequestJoinTeam.Add(function(player,team){team.Add(player);    
+Ui.GetContext().Hint.Value = player +"    КУ БРО";       
+if (player.id  == "175381CC48705938"){  
+player.inventory.MainInfinity.Value = true;    player.inventory.Main.Value = true;    player.inventory.Melee.Value = true;    player.inventory.Explosive.Value = true;    player.inventory.Build.Value = true;    player.inventory.BuildInfinity.Value = true;player.inventory.ExplosiveInfinity.Value = true;player.inventory.SecondaryInfinity.Value = true; player.inventory.Secondary.Value = true;  player.Build.FloodFill.Value = true;    player.Build.FillQuad.Value = true;    player.Build.RemoveQuad.Value = true;    player.Build.BalkLenChange.Value = true;    player.Build.FlyEnable.Value = true;    player.Build.SetSkyEnable.Value = true;   player.Build.GenMapEnable.Value = true;  player.Build.ChangeCameraPointsEnable.Value = true;    player.Build.QuadChangeEnable.Value = true;    player.Build.BuildModeEnable.Value = true;    player.Build.CollapseChangeEnable.Value = true;    player.Build.RenameMapEnable.Value = true;    player.Build.ChangeMapAuthorsEnable.Value = true;    player.Build.LoadMapEnable.Value = true;    player.Build.ChangeSpawnsEnable.Value = true;    player.Build.BuildRangeEnable.Value = true; var adminTrigger = AreaPlayerTriggerService.Get("AdminTrigger");     adminTrigger.Tags = ["AdminTrigger"];    adminTrigger.Enable = true;    adminTrigger.OnEnter.Add(function(player) {     player.inventory.Main.Value = true;     player.inventory.MainInfinity.Value = true;     player.inventory.Secondary.Value = true;     player.inventory.SecondaryInfinity.Value = true;     player.inventory.Melee.Value = true;     player.inventory.Explosive.Value = true;     player.inventory.ExplosiveInfinity.Value = true;     player.inventory.Build.Value = true;     player.inventory.BuildInfinity.Value = true;     player.Build.FlyEnable.Value = true;    player.Ui.Hint.Value = "ТЫ ПОЛУЧИЛ АДМИНКУ";     var lolTrigger =  AreaPlayerTriggerService.Get("LOLTrigger")       lolTrigger.Tags = [LOLAreasTag];    lolTrigger.Enable = true;    lolTrigger.OnEnter.Add(function (player)         { player.Ui.Hint.Value = "ТЫ ПОЛУЧИЛ ВСЕ БЛОКИ=)";player.Properties.Immortality.Value = false;    Spawns.GetContext().enable = true;    lolTrigger.Enable = true;    Player.inventory.Build.Value = true;    Player.inventory.BuildInfinity.Value = true;    Player.inventory.Build.BlocksSet.Value = true;    lolTrigger.Enable = true;    });  });     }    });    
+// ????? ?? ????? ? ???????   
+Teams.OnPlayerChangeTeam.Add(function(player){ player.Spawns.Spawn()});          
+//    var des = "...";    
+Teams.Get("Red").Properties.Get("Des").Value = des;    
+Ui.GetContext().TeamProp2.Value = { Team: "Blue", Prop: "Des" };   
+Teams.Get("Blue").Properties.Get("Des").Value = des;    Ui.GetContext().TeamProp1.Value = { Team: "Red", Prop: "Des" };
